@@ -164,17 +164,18 @@ $rowBg: #eee;
 .row {
   max-width: $gridWidth;
   margin: 0 auto; // to center the whole section
-  background-color: $rowBg;
+  //   background-color: $rowBg;
 
   &:not(:last-of-type) {
     margin-bottom: 5rem; // 80px
   }
 
   .col {
-    background-color: #da0202;
-    text-align: center;
-    padding: 2rem 1rem;
-    color: $white;
+    // background-color: #da0202;
+    // text-align: center;
+    padding: 2rem 0rem;
+    // color: $white;
+    // background-color: $rowBg;
 
     // col-2-3
     &.col-2-3 {
@@ -192,7 +193,7 @@ $rowBg: #eee;
   }
   // Let's start working with columns
   display: grid;
-  column-gap: 2rem;
+  column-gap: 3rem;
   &.col-1-of-2 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -234,4 +235,90 @@ $colorGray1: #f7f7f7;
 .u-mb-20 {
   // 20*4 = 80px, let's keep mb-1 = 4px
   margin-bottom: 5rem;
+}
+
+.u-mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.heading-3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.para {
+  font-size: 1rem;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+/** STYLING THE BTN **/
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: 1.125rem;
+    color: $mediumGreen;
+    text-decoration: none;
+    border-bottom: 1px solid $mediumGreen;
+    padding-bottom: 3px;
+    display: inline-block;
+    transition: all 0.25s;
+    padding: 2px 3px;
+  }
+
+  &:hover {
+    background-color: $mediumGreen;
+    box-shadow: 0 0.625rem 1.25rem rgba($black, 0.15);
+    transform: translateY(-4px);
+    color: $white;
+  }
+
+  &:active {
+    box-shadow: 0 5px 0.625rem rgba($black, 0.15);
+    transform: translateY(-1px);
+  }
+}
+
+// BEM with SCSS works awesome
+
+.composition {
+  position: relative;
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1rem 4rem rgba($black, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    transition: all 0.25s;
+    outline-offset: 1.25rem;
+
+    &--p1 {
+      left: 0;
+      top: -1.25rem;
+      z-index: 1;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 1.25rem;
+      z-index: 2;
+    }
+
+    &--p3 {
+      top: 10rem;
+      left: 20%;
+
+      z-index: 3;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 1.5rem 4rem rgba($black, 0.5);
+      cursor: pointer;
+      z-index: 4;
+      outline: 1rem solid $mediumGreen;
+    }
+  }
 }
