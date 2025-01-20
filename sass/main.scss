@@ -205,3 +205,23 @@ $rowBg: #eee;
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/** --- About Section --- */
+$colorGray1: #f7f7f7;
+.section-about {
+  background-color: $colorGray1;
+  margin-top: -20vh;
+  padding: 20rem 0;
+}
+
+.heading-secondary {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+
+  // Gradient Text Effect
+  background-image: linear-gradient(to right, $mediumGreen, $darkGreen);
+  background-clip: text;
+  color: transparent;
+}
