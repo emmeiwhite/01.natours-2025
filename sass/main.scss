@@ -207,7 +207,7 @@ $rowBg: #eee;
   }
 }
 
-/** --- About Section --- */
+/** --- 1. About Section --- */
 $colorGray1: #f7f7f7;
 .section-about {
   background-color: $colorGray1;
@@ -289,7 +289,7 @@ $colorGray1: #f7f7f7;
   &__photo {
     width: 55%;
     box-shadow: 0 1rem 4rem rgba($black, 0.4);
-    border-radius: 2px;
+    // border-radius: 2px;
     position: absolute;
     transition: all 0.25s;
     outline-offset: 1.25rem;
@@ -319,6 +319,51 @@ $colorGray1: #f7f7f7;
       cursor: pointer;
       z-index: 4;
       outline: 1rem solid $mediumGreen;
+    }
+  }
+
+  // Scale down other images other than the currently hovered one. Good Technique
+  &:hover {
+    .composition__photo:not(:hover) {
+      transform: scale(0.95);
+    }
+  }
+}
+
+/* --- 2. Feature Section--- */
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, $mediumGreen, $darkGreen),
+    url(../img/nat-4.jpg);
+
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0 15vh, 100% 0, 100% 85vh, 0 100%);
+  margin-top: -15vh;
+
+  .feature-box {
+    background-color: rgba($white, 0.8);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1rem 2.5rem rgba($black, 0.15);
+    transition: all 0.25s;
+
+    &__icon {
+      display: inline-block;
+      font-size: 3.75rem;
+      background-image: linear-gradient(to right, rgba(11, 176, 66, 0.8), rgba(0, 95, 63, 0.801));
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1.5rem;
+    }
+
+    &:hover {
+      transform: translateY(-1rem) scale(1.03);
+    }
+
+    &__text {
+      font-size: 0.875rem;
     }
   }
 }

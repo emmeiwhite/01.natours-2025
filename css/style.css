@@ -172,7 +172,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/** --- About Section --- */
+/** --- 1. About Section --- */
 .section-about {
   background-color: #f7f7f7;
   margin-top: -20vh;
@@ -242,7 +242,6 @@ body {
 .composition__photo {
   width: 55%;
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
-  border-radius: 2px;
   position: absolute;
   transition: all 0.25s;
   outline-offset: 1.25rem;
@@ -268,6 +267,41 @@ body {
   cursor: pointer;
   z-index: 4;
   outline: 1rem solid rgba(11, 176, 66, 0.8);
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95);
+}
+
+/* --- 2. Feature Section--- */
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(11, 176, 66, 0.8), rgba(0, 95, 63, 0.801)), url(../img/nat-4.jpg);
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0 15vh, 100% 0, 100% 85vh, 0 100%);
+  margin-top: -15vh;
+}
+.section-features .feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.15);
+  transition: all 0.25s;
+}
+.section-features .feature-box__icon {
+  display: inline-block;
+  font-size: 3.75rem;
+  background-image: linear-gradient(to right, rgba(11, 176, 66, 0.8), rgba(0, 95, 63, 0.801));
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1.5rem;
+}
+.section-features .feature-box:hover {
+  transform: translateY(-1rem) scale(1.03);
+}
+.section-features .feature-box__text {
+  font-size: 0.875rem;
 }
 
 /*# sourceMappingURL=style.css.map */
