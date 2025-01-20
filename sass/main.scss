@@ -332,14 +332,20 @@ $colorGray1: #f7f7f7;
 
 /* --- 2. Feature Section--- */
 .section-features {
-  padding: 20rem 0;
+  padding: 10rem 0;
   background-image: linear-gradient(to right bottom, $mediumGreen, $darkGreen),
     url(../img/nat-4.jpg);
 
   background-position: top;
   background-size: cover;
-  clip-path: polygon(0 15vh, 100% 0, 100% 85vh, 0 100%);
+  //   clip-path: polygon(0 15vh, 100% 0, 100% 85vh, 0 100%);
   margin-top: -15vh;
+  transform: skewY(-7deg);
+
+  //   Now reversing the skewY on all immediate children element, which basically is row (direct child)
+  & > * {
+    transform: skewY(7deg);
+  }
 
   .feature-box {
     background-color: rgba($white, 0.8);
