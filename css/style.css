@@ -148,17 +148,23 @@ body {
   display: grid;
   column-gap: 2rem;
 }
-.row:not(:last-child) {
+.row:not(:last-of-type) {
   margin-bottom: 5rem;
 }
 .row .col {
-  background-color: #ff8c8c;
+  background-color: #da0202;
   text-align: center;
   padding: 2rem 1rem;
   color: #fff;
 }
 .row .col.col-2-3 {
   grid-column: span 2;
+}
+.row .col.col-2-4 {
+  grid-column: span 2;
+}
+.row .col.col-3-4 {
+  grid-column: span 3;
 }
 .row.col-1-of-2 {
   grid-template-columns: repeat(2, 1fr);

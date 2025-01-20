@@ -166,12 +166,12 @@ $rowBg: #eee;
   margin: 0 auto; // to center the whole section
   background-color: $rowBg;
 
-  &:not(:last-child) {
+  &:not(:last-of-type) {
     margin-bottom: 5rem; // 80px
   }
 
   .col {
-    background-color: #ff8c8c;
+    background-color: #da0202;
     text-align: center;
     padding: 2rem 1rem;
     color: $white;
@@ -179,6 +179,15 @@ $rowBg: #eee;
     // col-2-3
     &.col-2-3 {
       grid-column: span 2;
+    }
+
+    // col-2-4
+    &.col-2-4 {
+      grid-column: span 2;
+    }
+
+    &.col-3-4 {
+      grid-column: span 3;
     }
   }
   // Let's start working with columns
