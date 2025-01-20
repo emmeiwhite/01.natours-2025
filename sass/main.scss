@@ -16,20 +16,19 @@ Dark green: #28b485
   box-sizing: border-box;
 }
 
-/* --- Custom Variables --- */
-:root {
-  --white: #fff;
-  --black: #000;
-  --main: #777;
-  --light-green: rgba(117, 255, 93, 0.804);
-  --medium-green: rgba(11, 176, 66, 0.8);
-  --dark-green: rgba(0, 95, 63, 0.801);
-}
+/* --- SCSS variables --- */
+
+$white: #fff;
+$black: #000;
+$main: #777;
+$lightGreen: rgba(117, 255, 93, 0.804);
+$mediumGreen: rgba(11, 176, 66, 0.8);
+$darkGreen: rgba(0, 95, 63, 0.801);
 
 body {
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
-  color: var(--main);
+  color: $main;
   line-height: 1.4;
   font-weight: 400;
   padding: 2rem;
@@ -44,8 +43,7 @@ body {
 /* --- Hero Section --- */
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, var(--medium-green), var(--dark-green)),
-    url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, $mediumGreen, $darkGreen), url(../img/hero.jpg);
 
   background-position: top;
   background-size: cover;
@@ -64,13 +62,13 @@ body {
 
 .hero-text {
   transform: translateY(-30%);
-  /* background-color: var(--black); */
+  /* background-color: $black); /
   padding: 1rem;
   /* animation: showIt 1s ease-in-out forwards; */
   text-align: center;
 }
 .hero-text h1 {
-  color: var(--white);
+  color: $white;
 }
 
 .hero-text--heading {
@@ -96,8 +94,8 @@ body {
 .hero-btn:visited {
   text-decoration: none;
   text-transform: uppercase;
-  background-color: var(--white);
-  color: var(--main);
+  background-color: $white;
+  color: $main;
   display: inline-block;
   margin-top: 2rem;
   border-radius: 2rem;
@@ -157,3 +155,44 @@ body {
     transform: translateZ(0) scale(1);
   }
 } */
+
+/*--- Creating a 12-Column Grid System --- */
+
+$gridWidth: 71.25rem;
+$rowBg: #eee;
+
+.row {
+  max-width: $gridWidth;
+  margin: 0 auto; // to center the whole section
+  background-color: $rowBg;
+
+  &:not(:last-child) {
+    margin-bottom: 5rem; // 80px
+  }
+
+  .col {
+    background-color: #ff8c8c;
+    text-align: center;
+    padding: 2rem 1rem;
+    color: $white;
+
+    // col-2-3
+    &.col-2-3 {
+      grid-column: span 2;
+    }
+  }
+  // Let's start working with columns
+  display: grid;
+  column-gap: 2rem;
+  &.col-1-of-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.col-1-of-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &.col-1-of-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
