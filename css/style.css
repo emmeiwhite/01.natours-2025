@@ -193,4 +193,13 @@ body {
   color: transparent;
 }
 
+/** ---  Adding Utility classes ---> Already heading towards tailwind goals --- */
+.u-text-center {
+  text-align: center;
+}
+
+.u-mb-20 {
+  margin-bottom: 5rem;
+}
+
 /*# sourceMappingURL=style.css.map */

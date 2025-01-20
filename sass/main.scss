@@ -225,3 +225,13 @@ $colorGray1: #f7f7f7;
   background-clip: text;
   color: transparent;
 }
+
+/** ---  Adding Utility classes ---> Already heading towards tailwind goals --- */
+.u-text-center {
+  text-align: center;
+}
+
+.u-mb-20 {
+  // 20*4 = 80px, let's keep mb-1 = 4px
+  margin-bottom: 5rem;
+}
