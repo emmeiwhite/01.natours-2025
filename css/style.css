@@ -144,6 +144,7 @@ body {
 .row {
   max-width: 71.25rem;
   margin: 0 auto;
+  padding: 0 1.25rem;
   display: grid;
   column-gap: 3rem;
 }
@@ -305,6 +306,28 @@ body {
 }
 .section-features .feature-box__text {
   font-size: 0.875rem;
+}
+
+/* --- 3. Most Popular Tours --- */
+.section-popular-tours {
+  padding: 16rem 0 30rem 0;
+  background-color: #f7f7f7;
+  margin-top: -6.25rem;
+}
+
+.card-parent {
+  perspective: 1000px;
+}
+
+.card {
+  min-height: 31.25rem;
+  background-color: orange;
+  transition: transform 0.8s;
+  cursor: pointer;
+}
+.card:hover {
+  transform: rotateY(180deg);
+  transform-origin: 50% 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

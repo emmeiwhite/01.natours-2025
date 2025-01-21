@@ -165,6 +165,7 @@ $rowBg: #eee;
   max-width: $gridWidth;
   margin: 0 auto; // to center the whole section
   //   background-color: $rowBg;
+  padding: 0 1.25rem;
 
   &:not(:last-of-type) {
     margin-bottom: 5rem; // 80px
@@ -371,5 +372,29 @@ $colorGray1: #f7f7f7;
     &__text {
       font-size: 0.875rem;
     }
+  }
+}
+
+/* --- 3. Most Popular Tours --- */
+.section-popular-tours {
+  padding: 16rem 0 30rem 0;
+  background-color: $colorGray1;
+  margin-top: -6.25rem;
+}
+
+.card-parent {
+  perspective: 1000px; // Assuming a camera is set vertically on the parent
+}
+// Styling the card component
+.card {
+  min-height: 31.25rem;
+  background-color: orange;
+  transition: transform 0.8s;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotateY(180deg);
+
+    transform-origin: 50% 50%;
   }
 }
