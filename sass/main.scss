@@ -382,19 +382,58 @@ $colorGray1: #f7f7f7;
   margin-top: -6.25rem;
 }
 
-.card-parent {
-  perspective: 1000px; // Assuming a camera is set vertically on the parent
-}
 // Styling the card component
+$lightOrange: #ffb900;
+$mediumOrange: #ff7730;
+
+$lightBlue: #2998ff;
+$mediumBlue: #5643fa;
+
 .card {
-  min-height: 31.25rem;
-  background-color: orange;
-  transition: transform 0.8s;
-  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d; // Retain 3D transformations
+  perspective: 100rem; // Assuming a camera is set vertically on the parent
+  &__side {
+    min-height: 30rem;
+    // background-color: orange;
+    transition: transform 0.8s;
+    cursor: pointer;
+    color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden; // Hides the back side when it's not facing the viewer
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
-  &:hover {
+    &--front {
+      background-color: $white;
+      transform: rotateY(0);
+    }
+
+    &--back {
+      transform: rotateY(-180deg); // Default state of backside is rotated
+      &-1 {
+        background-image: linear-gradient(to right, $lightOrange, $mediumOrange);
+      }
+
+      &-2 {
+        background-image: linear-gradient(to right bottom, $mediumGreen, $darkGreen);
+      }
+
+      &-3 {
+        background-image: linear-gradient(to right bottom, $lightBlue, $mediumBlue);
+      }
+    }
+  }
+
+  &:hover &__side--front {
     transform: rotateY(180deg);
+    z-index: 1;
+  }
 
-    transform-origin: 50% 50%;
+  &:hover &__side--back {
+    transform: rotateY(0);
+    z-index: 1;
   }
 }
