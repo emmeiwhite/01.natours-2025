@@ -389,6 +389,8 @@ $mediumOrange: #ff7730;
 $lightBlue: #2998ff;
 $mediumBlue: #5643fa;
 
+$colorGray2: #eee;
+
 .card {
   position: relative;
   transform-style: preserve-3d; // Retain 3D transformations
@@ -398,7 +400,7 @@ $mediumBlue: #5643fa;
     // background-color: orange;
     transition: transform 0.8s;
     cursor: pointer;
-    color: $white;
+    // color: $white;
     position: absolute;
     top: 0;
     left: 0;
@@ -429,11 +431,95 @@ $mediumBlue: #5643fa;
 
   &:hover &__side--front {
     transform: rotateY(180deg);
-    z-index: 1;
   }
 
   &:hover &__side--back {
     transform: rotateY(0);
-    z-index: 1;
+  }
+
+  // Card Front-side Styling
+
+  &__picture {
+    height: 14.25rem;
+    background-size: cover;
+    background-blend-mode: color;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, $lightOrange, $mediumOrange),
+        url(../img/nat-5.jpg);
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom, $mediumGreen, $darkGreen),
+        url(../img/nat-6.jpg);
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom, $lightBlue, $mediumBlue),
+        url(../img/nat-7.jpg);
+    }
+  }
+
+  // Heading
+  &__heading {
+    display: inline-block;
+    position: absolute;
+    max-width: 75%;
+    font-size: 1.75rem;
+    padding: 0.625rem 1rem;
+    right: 1.25rem;
+    top: 8rem;
+    color: $white;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  &__heading-span {
+    padding: 0.625rem 1rem;
+    box-decoration-break: clone;
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($lightOrange, 0.85),
+        rgba($mediumOrange, 0.8)
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($mediumGreen, 0.85),
+        rgba($darkGreen, 0.85)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($lightBlue, 0.85),
+        rgba($mediumBlue, 0.85)
+      );
+    }
+  }
+
+  // List Items
+
+  &__details {
+    padding: 1.75rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        border-bottom: 1px solid $colorGray2;
+        text-align: center;
+        padding-bottom: 0.25rem;
+        margin-bottom: 1rem;
+      }
+    }
   }
 }
