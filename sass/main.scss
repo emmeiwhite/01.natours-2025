@@ -380,6 +380,27 @@ $colorGray1: #f7f7f7;
   padding: 16rem 0 30rem 0;
   background-color: $colorGray1;
   margin-top: -6.25rem;
+
+  &__cta {
+    border: none;
+    padding: 0.75rem 2rem;
+    background-color: $mediumGreen;
+    transition: all 0.3s;
+    font-weight: 100;
+    border-radius: 1.5rem;
+    color: $white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    &:hover {
+      background-color: $mediumGreen;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    &:active {
+      transform: translateY(0px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
 }
 
 // Styling the card component
@@ -395,6 +416,7 @@ $colorGray2: #eee;
   position: relative;
   transform-style: preserve-3d; // Retain 3D transformations
   perspective: 100rem; // Assuming a camera is set vertically on the parent
+  height: 30rem;
   &__side {
     height: 30rem;
     // background-color: orange;
