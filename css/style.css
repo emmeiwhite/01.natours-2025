@@ -310,7 +310,7 @@ body {
 
 /* --- 3. Most Popular Tours --- */
 .section-popular-tours {
-  padding: 16rem 0 30rem 0;
+  padding: 16rem 0 10rem 0;
   background-color: #f7f7f7;
   margin-top: -6.25rem;
 }
@@ -466,6 +466,38 @@ body {
 .card__user-action--btn:active {
   transform: translateY(0px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 4. Stories Section --- */
+.section-stories {
+  padding: 13rem 0;
+}
+.section-stories .story {
+  width: 75%;
+  background-color: #fff;
+  box-shadow: 0 1.75rem 3.75rem rgba(0, 0, 0, 0.1);
+  padding: 3.75rem;
+  padding-left: 5.5rem;
+  margin: 0 auto;
+  transform: skewX(-12deg);
+}
+.section-stories .story > * {
+  transform: skewX(12deg);
+}
+.section-stories .story:not(:last-child) {
+  margin-bottom: 3rem;
+}
+.section-stories .story img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  clip-path: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%); /* Define the wrapping shape */
+  float: left;
+  transform: translateX(-1.75rem) skewX(12deg);
+}
+.section-stories .story p {
+  line-height: 1.8;
 }
 
 /*# sourceMappingURL=style.css.map */
