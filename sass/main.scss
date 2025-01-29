@@ -596,7 +596,28 @@ $colorGray2: #eee;
 
 .section-stories {
   padding: 13rem 0;
+  position: relative;
+
+  // Updating heading for stories section to make sure the text appears well
+
+  .heading-secondary {
+    background-image: linear-gradient(to right, $lightGreen, $mediumGreen);
+    background-clip: border-box;
+    color: $white;
+    padding: 0.5rem;
+    transform: skewX(12deg);
+  }
+
+  .btn-text {
+    color: $black;
+    border-bottom: 4px solid $black;
+
+    &:hover {
+      border-bottom: 4px solid $lightGreen;
+    }
+  }
 }
+
 .story {
   width: 75%;
   background-color: $white;
@@ -657,5 +678,24 @@ $colorGray2: #eee;
   &:hover &__img {
     transform: scale(1);
     filter: blur(1px) brightness(90%);
+  }
+
+  // video element styling
+}
+
+.bg-video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.8;
+  z-index: -1;
+  overflow: hidden;
+
+  &__content {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
   }
 }

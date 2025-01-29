@@ -472,6 +472,21 @@ body {
 /* --- 4. Stories Section --- */
 .section-stories {
   padding: 13rem 0;
+  position: relative;
+}
+.section-stories .heading-secondary {
+  background-image: linear-gradient(to right, rgba(117, 255, 93, 0.804), rgba(11, 176, 66, 0.8));
+  background-clip: border-box;
+  color: #fff;
+  padding: 0.5rem;
+  transform: skewX(12deg);
+}
+.section-stories .btn-text {
+  color: #000;
+  border-bottom: 4px solid #000;
+}
+.section-stories .btn-text:hover {
+  border-bottom: 4px solid rgba(117, 255, 93, 0.804);
 }
 
 .story {
@@ -527,6 +542,22 @@ body {
 .story:hover .story__img {
   transform: scale(1);
   filter: blur(1px) brightness(90%);
+}
+
+.bg-video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.8;
+  z-index: -1;
+  overflow: hidden;
+}
+.bg-video__content {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
