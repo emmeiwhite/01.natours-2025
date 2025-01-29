@@ -601,14 +601,31 @@ $colorGray2: #eee;
     background-color: $white;
     box-shadow: 0 1.75rem 3.75rem rgba(0, 0, 0, 0.1);
     padding: 3.75rem;
+    padding-left: 5.625rem;
     margin: 0 auto;
     font-size: 1rem;
+    transform: skewX(-12deg);
+
+    & > * {
+      transform: skewX(12deg);
+    }
     &__shape {
       height: 9.375rem;
       width: 9.375rem;
       background-color: #ccc;
       float: left;
       shape-outside: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+
+      transform: translateX(-1.875rem) skewX(12deg);
+    }
+
+    &__img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__text {
     }
   }
 }
