@@ -266,6 +266,7 @@ $colorGray1: #f7f7f7;
     border-bottom: 1px solid $mediumGreen;
     padding-bottom: 3px;
     display: inline-block;
+    width: fit-content;
     transition: all 0.25s;
     padding: 2px 3px;
   }
@@ -595,37 +596,66 @@ $colorGray2: #eee;
 
 .section-stories {
   padding: 13rem 0;
+}
+.story {
+  width: 75%;
+  background-color: $white;
+  box-shadow: 0 1.75rem 3.75rem rgba(0, 0, 0, 0.1);
+  padding: 3.75rem;
+  padding-left: 5.625rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  transform: skewX(-12deg);
+  margin-bottom: 5rem;
 
-  .story {
-    width: 75%;
-    background-color: $white;
-    box-shadow: 0 1.75rem 3.75rem rgba(0, 0, 0, 0.1);
-    padding: 3.75rem;
-    padding-left: 5.625rem;
-    margin: 0 auto;
-    font-size: 1rem;
-    transform: skewX(-12deg);
+  & > * {
+    transform: skewX(12deg);
+  }
+  &__shape {
+    height: 9.375rem;
+    width: 9.375rem;
+    background-color: #ccc;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-1.875rem) skewX(12deg);
+    position: relative;
+  }
 
-    & > * {
-      transform: skewX(12deg);
-    }
-    &__shape {
-      height: 9.375rem;
-      width: 9.375rem;
-      background-color: #ccc;
-      float: left;
-      shape-outside: circle(50% at 50% 50%);
-      clip-path: circle(50% at 50% 50%);
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1.25);
+    transition: all 0.25s;
+  }
 
-      transform: translateX(-1.875rem) skewX(12deg);
-    }
+  &__text {
+  }
 
-    &__img {
-      height: 100%;
-      object-fit: cover;
-    }
+  &__caption {
+    position: absolute;
+    width: 50px;
+    color: $white;
+    font-weight: 700;
+    text-transform: uppercase;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    transition: all 0.25s;
+    opacity: 0;
+    backface-visibility: hidden;
+  }
 
-    &__text {
-    }
+  &:hover &__caption {
+    opacity: 1;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  &:hover &__img {
+    transform: scale(1);
+    filter: blur(1px) brightness(90%);
   }
 }
