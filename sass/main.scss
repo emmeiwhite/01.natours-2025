@@ -601,29 +601,14 @@ $colorGray2: #eee;
     background-color: $white;
     box-shadow: 0 1.75rem 3.75rem rgba(0, 0, 0, 0.1);
     padding: 3.75rem;
-    padding-left: 5.5rem;
     margin: 0 auto;
-    transform: skewX(-12deg);
-    & > * {
-      transform: skewX(12deg);
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 3rem;
-    }
-
-    img {
-      width: 8rem;
-      height: 8rem;
-      object-fit: cover;
-      clip-path: circle(50% at 50% 50%);
-      shape-outside: circle(50% at 50% 50%); /* Define the wrapping shape */
+    font-size: 1rem;
+    &__shape {
+      height: 9.375rem;
+      width: 9.375rem;
+      background-color: #ccc;
       float: left;
-      transform: translateX(-1.75rem) skewX(12deg); // Reversing the Skew!
-    }
-
-    p {
-      line-height: 1.8;
+      shape-outside: circle(50% at 50% 50%);
     }
   }
 }
